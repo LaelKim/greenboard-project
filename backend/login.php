@@ -32,7 +32,7 @@ try {
       $_SESSION['user_email'] = $user['email'];
       $_SESSION['user_role'] = $user['role'];
 
-      header("Location: ../frontend/index.html");
+      header("Location: ../frontend/index.php");
       exit;
     } else {
       // Mauvais identifiants

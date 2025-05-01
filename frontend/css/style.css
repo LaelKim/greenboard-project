@@ -179,3 +179,47 @@ main.home {
   transition: background 0.3s;
   text-decoration: none;
 }
+.btn-user {
+  background: #10b981;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-user:hover {
+  background: #059669;
+}
+
+.btn-logout {
+  background: #ef4444;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: #b91c1c;
+}
+
+.btn-login {
+  background: #3b82f6;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #2563eb;
+}
