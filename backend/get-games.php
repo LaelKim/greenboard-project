@@ -1,11 +1,12 @@
 <?php
-// Connexion à la base de données
+// Paramètres de connexion à la base de données
 $host = 'localhost';
-$db   = 'greenboard';
+$db   = 'greenboard'; // Le nom exact de ta base de données
 $user = 'root';
-$pass = ''; // Mets ton mot de passe si tu en as un
+$pass = ''; // Si tu as défini un mot de passe, remplace ici
 $charset = 'utf8mb4';
 
+// Configuration PDO
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -13,9 +14,10 @@ $options = [
 ];
 
 try {
+    // Connexion à la base
     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    // Requête pour récupérer les données complètes avec image et catégorie
+    // Requête : récupérer les jeux + note + image + catégorie
     $stmt = $pdo->query("
         SELECT 
             g.id, 
@@ -36,6 +38,7 @@ try {
     $games = $stmt->fetchAll();
     echo json_encode($games);
 } catch (PDOException $e) {
+    // Gestion d'erreur
     http_response_code(500);
     echo json_encode(['error' => $e->getMessage()]);
 }
