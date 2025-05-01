@@ -35,7 +35,7 @@ try {
     $stmt->execute([$name, $email, $hashedPassword]);
 
     // Rediriger vers login après inscription
-    header("Location: ../frontend/login.html");
+    header("Location: ../frontend/login.php");
 
     exit;
   }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -7,15 +8,9 @@
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <header>
-      <a href="index.php" class="logo"><h1>🎲 GreenBoard</h1></a>
-      <nav>
-        <a href="catalogue.html">Catalogue</a>
-        <a href="users.html">Utilisateurs</a>
-        <a href="ecoindex.html">ÉcoIndex</a>
-        <a href="rapport.html">Rapport</a>
-      </nav>
-    </header>
+    
+<?php include('header.php'); ?>
+
 
     <div class="login-wrapper">
       <div class="login-left"></div>

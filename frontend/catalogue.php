@@ -1,3 +1,5 @@
+<?php include('../backend/session.php'); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -7,16 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <a href="index.php" class="logo"><h1>🎲 GreenBoard</h1></a>
-      <nav>
-        <a href="catalogue.php">Catalogue</a>
-        <a href="users.php">Utilisateurs</a>
-        <a href="ecoindex.html">ÉcoIndex</a>
-        <a href="rapport.html">Rapport</a>
-        <a href="login.html" class="btn-login">Se connecter</a>
-      </nav>
-    </header>
+  <?php include('header.php'); ?>
 
     <main>
       <h2>Catalogue des jeux</h2>
