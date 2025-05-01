@@ -8,10 +8,10 @@
   </head>
   <body>
     <header>
-      <a href="index.html" class="logo"><h1>🎲 GreenBoard</h1></a>
+      <a href="index.php" class="logo"><h1>🎲 GreenBoard</h1></a>
       <nav>
-        <a href="catalogue.html">Catalogue</a>
-        <a href="users.html">Utilisateurs</a>
+        <a href="catalogue.php">Catalogue</a>
+        <a href="users.php">Utilisateurs</a>
         <a href="ecoindex.html">ÉcoIndex</a>
         <a href="rapport.html">Rapport</a>
         <a href="login.html" class="btn-login">Se connecter</a>
