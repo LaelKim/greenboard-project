@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription - GreenBoard</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    
+<?php include('header.php'); ?>
+
+
+    <div class="login-wrapper">
+      <div class="login-left"></div>
+      <div class="login-right">
+        <div class="login-box">
+          <h2>Créer un compte</h2>
+          <form action="../backend/register.php" method="post">
+            <input type="text" name="name" placeholder="Nom complet" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse email"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              required
+            />
+            <input
+              type="password"
+              name="confirm_password"
+              placeholder="Confirmer le mot de passe"
+              required
+            />
+            <button type="submit">S'inscrire</button>
+          </form>
+          <p class="register-link">
+            Déjà un compte ? <a href="login.html">Se connecter</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
