@@ -17,8 +17,7 @@
     <a class="cta" href="catalogue.php">🎮 Explorer le catalogue</a>
   </main>
 
-  <footer>
-    <p>&copy; 2025 GreenBoard • Projet étudiant éco-responsable</p>
-  </footer>
+  <?php include('footer.php'); ?>
+
 </body>
 </html>

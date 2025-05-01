@@ -17,9 +17,8 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 GreenBoard • Projet étudiant éco-responsable</p>
-    </footer>
+    <?php include('footer.php'); ?>
+
 
     <script src="js/jeu.js"></script>
   </body>

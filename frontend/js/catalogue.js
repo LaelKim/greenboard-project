@@ -9,18 +9,57 @@ fetch("../backend/get-games.php")
           ? game.thumbnail
           : "https://via.placeholder.com/150?text=No+Image";
 
-      const cardLink = document.createElement("a");
-      cardLink.href = `jeu.html?id=${game.id}`;
-      cardLink.className = "card";
-      cardLink.style.textDecoration = "none";
-      cardLink.style.color = "inherit";
+      const card = document.createElement("div");
+      card.className = "card";
 
-      cardLink.innerHTML = `
+      const link = document.createElement("a");
+      link.href = `jeu.php?id=${game.id}`;
+      link.style.textDecoration = "none";
+      link.style.color = "inherit";
+
+      link.innerHTML = `
         <img src="${image}" alt="${game.name}" />
         <h3>${game.name}</h3>
       `;
 
-      container.appendChild(cardLink);
+      const heartBtn = document.createElement("button");
+      heartBtn.className = "wishlist-btn";
+      heartBtn.dataset.gameId = game.id;
+      heartBtn.innerText = game.in_wishlist ? "❤️" : "🤍";
+
+      if (game.in_wishlist) heartBtn.classList.add("active");
+
+      heartBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!isLoggedIn) {
+          alert("Veuillez vous connecter pour gérer votre wishlist.");
+          return;
+        }
+
+        fetch("../backend/toggle-wishlist.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: "game_id=" + encodeURIComponent(game.id),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "added") {
+              heartBtn.innerText = "❤️";
+              heartBtn.classList.add("active");
+            } else if (data.status === "removed") {
+              heartBtn.innerText = "🤍";
+              heartBtn.classList.remove("active");
+            }
+          });
+      });
+
+      card.appendChild(link);
+      card.appendChild(heartBtn);
+      container.appendChild(card);
     });
   })
   .catch((error) => {

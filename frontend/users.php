@@ -24,8 +24,7 @@ if (!$isLoggedIn || $_SESSION['user_role'] !== 'admin') {
     <p>Ici s’affichera la liste des utilisateurs (à générer dynamiquement plus tard).</p>
   </main>
 
-  <footer>
-    <p>&copy; 2025 GreenBoard</p>
-  </footer>
+  <?php include('footer.php'); ?>
+
 </body>
 </html>
