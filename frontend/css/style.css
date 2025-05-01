@@ -226,10 +226,10 @@ main.home {
 .wishlist-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
-  margin-top: 0.4rem;
-  transition: transform 0.2s;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .wishlist-btn:hover {
@@ -238,7 +238,21 @@ main.home {
 
 .wishlist-btn.active {
   color: red;
+  animation: pop 0.3s ease;
 }
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .wishlist-btn.active {
   background-color: #ef4444;
   color: white;
